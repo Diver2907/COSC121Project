@@ -42,6 +42,21 @@ public class Farm {
 			this.availableFood = availableFood;
 	}
 	public Animal[] getAnimals() {
-		return animals;
+		int animalCount = 0;
+		
+		for(Animal animalia : animals){
+			if (animalia != null){
+				animalCount+=1;
+			}
+		}
+		Animal animalArray[] = new Animal[animalCount];
+		int arrayIdx = 0;
+		for(Animal animalia:animals){
+			if (animalia != null){
+				animalArray[arrayIdx]=animalia;
+				arrayIdx+=1;
+			}
+		}
+		return animalArray;
 	}	
 }

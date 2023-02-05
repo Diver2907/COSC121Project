@@ -7,6 +7,8 @@ public class FarmTest {
 		Farm myFarm = new Farm();
 		myFarm.add(new Chicken());
 		myFarm.add(new Cow());
+		myFarm.add(new Llama());
+		myFarm.add(new Llama());
 		for(Animal a:myFarm.getAnimals()) {
 			if (a == null) {break;}
 			else {
