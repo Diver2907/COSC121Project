@@ -1,7 +1,7 @@
 package P2;
 import java.util.Arrays;
 
-public class Farm{
+public class Farm implements Cloneable{
 	private double availableFood;
 	private Animal[] animals;
 	public Farm() {
@@ -72,9 +72,16 @@ public class Farm{
 	}
 
 	public boolean addClone(Animal anim) throws CloneNotSupportedException{
-		for(int i=0;i<animals.length;i++){
-			if(animals[i] == null){
-				animals[i] = (Animal) anim.clone();
+		Animal[] newAnimals = new Animal[animals.length+1];
+		int index = 0;
+		for(Animal animal:animals){
+			newAnimals[index] = animal;
+			index+=1;
+		}
+		for(int i=0; i<newAnimals.length;i++){
+			if(newAnimals[i] == null){
+				newAnimals[i] = (Animal) anim.clone();
+				animals = newAnimals;
 				return true;
 			}
 		}
