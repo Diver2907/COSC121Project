@@ -70,4 +70,14 @@ public class Farm{
 		}
 		animals = sortArray;
 	}
+
+	public boolean addClone(Animal anim) throws CloneNotSupportedException{
+		for(int i=0;i<animals.length;i++){
+			if(animals[i] == null){
+				animals[i] = (Animal) anim.clone();
+				return true;
+			}
+		}
+		return false;
+	}
 }
