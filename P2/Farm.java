@@ -87,4 +87,42 @@ public class Farm implements Cloneable{
 		}
 		return false;
 	}
+
+	public void printAnimals(){
+		for(Animal animal:animals){
+			System.out.printf("%-8s: %-5s at (%-2.1f,%-2.1f) Energy=%-7.1f\n", animal.getName(), animal.isAlive()?"alive":"dead",animal.getX(),animal.getY(),animal.getEnergy());
+		} 
+	}
+
+	public int getNumChicken(){
+		int chickenCount = 0;
+		for(Animal animal:animals){
+			if(animal instanceof Chicken){
+				chickenCount+=1;
+			}
+		}
+		return chickenCount;
+	}
+	public int getNumCow(){
+		int cowCount = 0;
+		for(Animal animal:animals){
+			if(animal instanceof Cow){
+				cowCount+=1;
+			}
+		}
+		return cowCount;
+	}
+	public int getNumLlama(){
+		int llamaCount = 0;
+		for(Animal animal:animals){
+			if(animal instanceof Llama){
+				llamaCount+=1;
+			}
+		}
+		return llamaCount;
+	}
+	public void printSummary(){
+		int totalAnimals = getNumChicken()+getNumCow()+getNumLlama();
+		System.out.printf("The farm has:\n- %d animals (%d chickens,%d cows,%d llamas)\n- %f units of available food",totalAnimals,getNumChicken(),getNumCow(),getNumLlama(),getAvailableFood());
+	}
 }
