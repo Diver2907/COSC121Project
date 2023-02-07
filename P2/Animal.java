@@ -95,5 +95,8 @@ public abstract class Animal { // Allows to implement interfaces without providi
 	public String toString(){
 		//return String.format("Alive:%b Name:%-10sEnergy:%-7.1fLocation:(%-2.1f,%-2.1f)", isAlive(), name, energy,x,y); 
 		return String.format("%-8s: %-5s at (%-2.1f,%-2.1f) Energy=%-7.1f", name, isAlive()?"alive":"dead",x,y,energy); 
-	}	
+	}
+    public static long[] getAnimals() {
+        return null;
+    }	
 }
