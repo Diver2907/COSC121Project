@@ -1,7 +1,7 @@
 package P2;
 import java.util.Arrays;
 
-public class Farm {
+public class Farm{
 	private double availableFood;
 	private Animal[] animals;
 	public Farm() {
@@ -63,8 +63,11 @@ public class Farm {
 	}	
 
 	public void animSort(){
-		System.out.println(Arrays.toString(animals));
-		Arrays.sort(animals);
-		System.out.println(Arrays.toString(animals));
+		Animal[] sortArray = getAnimals();
+		for(int i=0;i<sortArray.length-1;i++){
+			sortArray[i].compareTo(sortArray[i+1]);
+			Arrays.sort(sortArray);
+		}
+		animals = sortArray;
 	}
 }
