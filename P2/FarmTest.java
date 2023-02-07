@@ -2,8 +2,8 @@ package P2;
 
 import java.util.Arrays;
 
-public class FarmTest {
-	public static void main(String[] args) {
+public class FarmTest implements Cloneable{
+	public static void main(String[] args) throws CloneNotSupportedException {
 		Farm myFarm = new Farm();
 		myFarm.add(new Chicken());
 		myFarm.add(new Cow());
@@ -25,5 +25,8 @@ public class FarmTest {
 		myFarm.makeNoise();
 		myFarm.getAnimals()[0].speak("Hello!!");
 		System.out.println(Arrays.toString(myFarm.getAnimals()));
+		System.out.println("Before Clone:");
+		System.out.println(myFarm.addClone(myFarm.getAnimals()[2]));
+		System.out.println("After clone "+Arrays.toString(myFarm.getAnimals()));
 	}
 }
