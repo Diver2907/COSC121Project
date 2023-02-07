@@ -1,6 +1,6 @@
 package P2;
 
-public abstract class Animal implements Comparable<Animal>{ // Allows to implement interfaces without providing the interface methods
+public abstract class Animal implements Comparable<Animal>,Cloneable{ // Allows to implement interfaces without providing the interface methods
 	private String name;
 	private double energy, mealAmount, x, y, speedX=1, speedY=1;
 	private boolean alive;	
