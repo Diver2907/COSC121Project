@@ -18,7 +18,7 @@ public class FarmTest {
 			}
 		}
 		myFarm.animSort();
-		System.out.println(Arrays.toString(myFarm.getAnimals()));
+		System.out.println(Arrays.toString(myFarm.getAnimals())); 
 		System.out.println("Before feeding: " + myFarm.getAvailableFood());
 		myFarm.feedAnimals();
 		System.out.println("After feeding: " + myFarm.getAvailableFood());

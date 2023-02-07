@@ -1,4 +1,6 @@
 package P2;
+import java.util.Arrays;
+
 public class Farm {
 	private double availableFood;
 	private Animal[] animals;
@@ -61,18 +63,8 @@ public class Farm {
 	}	
 
 	public void animSort(){
-		for(int i=0; i<animals.length-1;i++){
-            for(int j=0;j<animals.length-i-1;j++){
-                double energy1 = animals[j].getEnergy();
-                double energy2 = animals[j+1].getEnergy();
-                Animal temp = animals[j];
-                if(energy1>energy2){
-                    animals[j] = animals[j+1];
-                    animals[j+1] = temp;
-                }
-            }
-        }
-		
-
+		System.out.println(Arrays.toString(animals));
+		Arrays.sort(animals);
+		System.out.println(Arrays.toString(animals));
 	}
 }

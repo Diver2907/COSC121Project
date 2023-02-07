@@ -1,6 +1,6 @@
 package P2;
 
-public abstract class Animal { // Allows to implement interfaces without providing the interface methods
+public abstract class Animal implements Comparable<Animal>{ // Allows to implement interfaces without providing the interface methods
 	private String name;
 	private double energy, mealAmount, x, y, speedX=1, speedY=1;
 	private boolean alive;	
@@ -96,7 +96,13 @@ public abstract class Animal { // Allows to implement interfaces without providi
 		//return String.format("Alive:%b Name:%-10sEnergy:%-7.1fLocation:(%-2.1f,%-2.1f)", isAlive(), name, energy,x,y); 
 		return String.format("%-8s: %-5s at (%-2.1f,%-2.1f) Energy=%-7.1f", name, isAlive()?"alive":"dead",x,y,energy); 
 	}
-    public static long[] getAnimals() {
-        return null;
-    }	
+	public int compareTo(Animal anim){
+		if(this.energy > anim.getEnergy()){
+			return 1;
+		}
+		if(this.energy < anim.getEnergy()){
+			return -1;
+		}
+		return 0;
+	}
 }
