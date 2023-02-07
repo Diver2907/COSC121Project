@@ -105,4 +105,8 @@ public abstract class Animal implements Comparable<Animal>{ // Allows to impleme
 		}
 		return 0;
 	}
+
+	public Object clone() throws CloneNotSupportedException{
+		return super.clone();
+	}
 }
