@@ -89,6 +89,7 @@ public class Farm implements Cloneable{
 	}
 
 	public void printAnimals(){
+		getAnimals();
 		for(Animal animal:animals){
 			System.out.printf("%-8s: %-5s at (%-2.1f,%-2.1f) Energy=%-7.1f\n", animal.getName(), animal.isAlive()?"alive":"dead",animal.getX(),animal.getY(),animal.getEnergy());
 		} 
