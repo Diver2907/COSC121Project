@@ -1,7 +1,5 @@
 package P2;
 
-import java.util.Arrays;
-
 public class FarmTest implements Cloneable{
 	public static void main(String[] args) throws CloneNotSupportedException {
 		Farm myFarm = new Farm();

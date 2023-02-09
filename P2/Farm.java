@@ -16,7 +16,6 @@ public class Farm implements Cloneable{
 			}
 		}
 		return false;
-		
 	}
 	public void makeNoise(){			// all animals make their sound (Moo, Cluck, etc)
 		for(Animal animal: animals)
@@ -49,7 +48,7 @@ public class Farm implements Cloneable{
 		for(Animal animalia : animals){
 			if (animalia != null){
 				animalCount+=1;
-			}
+			}else{break;}
 		}
 		Animal animalArray[] = new Animal[animalCount];
 		int arrayIdx = 0;
@@ -57,9 +56,10 @@ public class Farm implements Cloneable{
 			if (animalia != null){
 				animalArray[arrayIdx]=animalia;
 				arrayIdx+=1;
-			}
+			}else{break;}
 		}
-		return animalArray;
+		animals = animalArray;
+		return animals;
 	}	
 
 	public void animSort(){
@@ -89,8 +89,9 @@ public class Farm implements Cloneable{
 	}
 
 	public void printAnimals(){
-		getAnimals();
-		for(Animal animal:animals){
+		Animal[] printAnimalArray = new Animal[getNumChicken()+getNumCow()+getNumLlama()];
+		printAnimalArray = getAnimals();
+		for(Animal animal:printAnimalArray){
 			System.out.printf("%-8s: %-5s at (%-2.1f,%-2.1f) Energy=%-7.1f\n", animal.getName(), animal.isAlive()?"alive":"dead",animal.getX(),animal.getY(),animal.getEnergy());
 		} 
 	}
